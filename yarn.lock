@@ -1296,6 +1296,116 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@morphic-ts/adt@^2.0.0-alpha.8":
+  version "2.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/adt/-/adt-2.0.0-alpha.8.tgz#8af0a8d37504107669b3891f9f334ba645225ec7"
+  integrity sha512-UaJXzBmfK1wB4BPfwx7eLA2agjYu+NaOnpeifQ2BfPle6T2oHZcxMNHGlkfBrSjm/tT/PANQ2lVu70B7/C51ew==
+  dependencies:
+    fp-ts "^2.5.3"
+    monocle-ts "^2.0.1"
+
+"@morphic-ts/algebras@^2.0.0-alpha.8":
+  version "2.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/algebras/-/algebras-2.0.0-alpha.8.tgz#eca8d84af9497121ee73a8be7b3ca1b69ca6e267"
+  integrity sha512-QUGcn417qU//6Sm7NHGTw7vYYlfi71QF+eD5u723uKXVvhnxje7NRhuymq1Zqr1/vnLSkV6A6FQmTvQMgy0EPg==
+  dependencies:
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+
+"@morphic-ts/batteries@^2.0.0-alpha.13":
+  version "2.0.0-alpha.13"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/batteries/-/batteries-2.0.0-alpha.13.tgz#eb5e43f9d78b321c63cad3eab7cfda3eae7e00bd"
+  integrity sha512-KomojAdv25/9MWNZe7qPG3021E4y+J0fE+ALzMMz4y5PDz8fkoMGZux8F3Cgvu2nr92e1Q44NtApvHDvg9iguA==
+  dependencies:
+    "@morphic-ts/adt" "^2.0.0-alpha.8"
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/eq-interpreters" "^2.0.0-alpha.11"
+    "@morphic-ts/fastcheck-interpreters" "^2.0.0-alpha.11"
+    "@morphic-ts/io-ts-interpreters" "^2.0.0-alpha.11"
+    "@morphic-ts/json-schema-interpreters" "^2.0.0-alpha.11"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+    "@morphic-ts/ord-interpreters" "^2.0.0-alpha.11"
+    "@morphic-ts/show-interpreters" "^2.0.0-alpha.11"
+    "@morphic-ts/summoners" "^2.0.0-alpha.8"
+
+"@morphic-ts/common@^2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/common/-/common-2.0.0-alpha.4.tgz#e8b53d7e145ea75b994b7cc66bc9fbf74bd1f588"
+  integrity sha512-9EEJW/j0DkppF9ePco+HoChio8yqzJz85VDWx5vj1T6myueduCZ76CYPclHvK7csOzumgVtqqqQQ0gjacAKOHQ==
+
+"@morphic-ts/eq-interpreters@^2.0.0-alpha.11":
+  version "2.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/eq-interpreters/-/eq-interpreters-2.0.0-alpha.11.tgz#a51dfc67c738f3132255779d6b7990c545043fde"
+  integrity sha512-WDDrG5lJVvVT8HBcDg5+o9KO5F74UUVUtbfUvaVGBpS5jvrAyhtdlghGLfYFfTrNcptbyafK8HAOhXqIYvh5RQ==
+  dependencies:
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+    fast-equals "^2.0.0"
+
+"@morphic-ts/fastcheck-interpreters@^2.0.0-alpha.11":
+  version "2.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/fastcheck-interpreters/-/fastcheck-interpreters-2.0.0-alpha.11.tgz#690e6d08875a13dabc50402a879351387a38ed0c"
+  integrity sha512-qRvBC0OphbyKpgMI5CLUC4w+gAMQBEwTbP07Wui8Zb7oAqiYARaTlh3vC7tXhca7J4saXMhJvIo/IuoEU6Z45g==
+  dependencies:
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+
+"@morphic-ts/io-ts-interpreters@^2.0.0-alpha.11":
+  version "2.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/io-ts-interpreters/-/io-ts-interpreters-2.0.0-alpha.11.tgz#c4db7e5d95b918398eb1fa6436de95e2e03a7d15"
+  integrity sha512-jmJ26zCmq+LO/tPh7+3Ed0spfFHWutcCi+hwKDkygqn6mnftuBTmnntrM30CkIW5dZMAsSfVb6qRfArWroM2lA==
+  dependencies:
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+
+"@morphic-ts/json-schema-interpreters@^2.0.0-alpha.11":
+  version "2.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/json-schema-interpreters/-/json-schema-interpreters-2.0.0-alpha.11.tgz#0017a68cc1f559112bcf62786e9a0e5781ccc39d"
+  integrity sha512-aivsFd2/hvn/oCYDyq+3hnIYi4Fh0qGK2B8Dodhrm2FiuMezPnpNdBJ6fxUdY29T/edJ8+/isCRsr81RIyfH4A==
+  dependencies:
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+
+"@morphic-ts/model-algebras@^2.0.0-alpha.9":
+  version "2.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/model-algebras/-/model-algebras-2.0.0-alpha.9.tgz#95667da5dde07ada7a93570c9e163f070965ba1b"
+  integrity sha512-dgyEl1ckvNhw6PnKTQxhzz1sh2FAx2w8N56ZRakPq35IVejbcpYsYiu19D+tMVoaO7MjmHXGLfMolzPoWkSCtw==
+  dependencies:
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+
+"@morphic-ts/ord-interpreters@^2.0.0-alpha.11":
+  version "2.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/ord-interpreters/-/ord-interpreters-2.0.0-alpha.11.tgz#4a1f08611175f66234fa66f92646e4f59192383a"
+  integrity sha512-laF2FbBzf9j7dMU9e4+dE2fMSkuxfXq6MLpxww45j7u3hfJCHV+oXa53d0hMEwo6G6capUiN2bd9esn87oq73g==
+  dependencies:
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+
+"@morphic-ts/show-interpreters@^2.0.0-alpha.11":
+  version "2.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/show-interpreters/-/show-interpreters-2.0.0-alpha.11.tgz#605d5cd79d1712779dec75d38ea4bc0c3ac89db3"
+  integrity sha512-3uUbm04VfRL9n19Ib5JD/KVpIWK2BAObrExcDAaE44cy3FJKxfob1DCv0Py8Rb2z9wS2P2Xyo9kTQbDzQzbq1w==
+  dependencies:
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+
+"@morphic-ts/summoners@^2.0.0-alpha.8":
+  version "2.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/@morphic-ts/summoners/-/summoners-2.0.0-alpha.8.tgz#47a100bb4f2a50686af639363d51ae6ffa1538ff"
+  integrity sha512-HmoT/Nkd3zv1QSSas9wUS28ECHt+xYIgyXG1wayOGYEB+JE0XGVvWjt/2i5ullg098TYSzmpv1OSdtRbGKaPGg==
+  dependencies:
+    "@morphic-ts/adt" "^2.0.0-alpha.8"
+    "@morphic-ts/algebras" "^2.0.0-alpha.8"
+    "@morphic-ts/common" "^2.0.0-alpha.4"
+    "@morphic-ts/model-algebras" "^2.0.0-alpha.9"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -4467,6 +4577,11 @@ fast-deep-equal@^3.1.1:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
   integrity sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
 
+fast-equals@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/fast-equals/-/fast-equals-2.0.0.tgz#bef2c423af3939f2c54310df54c57e64cd2adefc"
+  integrity sha512-u6RBd8cSiLLxAiC04wVsLV6GBFDOXcTCgWkd3wEoFXgidPSoAJENqC9m7Jb2vewSvjBIfXV6icKeh3GTKfIaXA==
+
 fast-glob@^2.0.2:
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.7.tgz#6953857c3afa475fff92ee6015d52da70a4cd39d"
@@ -4717,6 +4832,11 @@ forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
+
+fp-ts@^2.5.3, fp-ts@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.8.3.tgz#c09652bbf21e64d65a9f93587ad549ab0e03abe7"
+  integrity sha512-oGD3BTSzFCPs9alaI/2gh0SCNKyhPXkpeIBvkXNvnoczHfDAUd2HHtotCdLO0hOTTTTx8VKA0mhhR7LUNo+cKg==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -5281,6 +5401,11 @@ immer@^7.0.3:
   resolved "https://registry.yarnpkg.com/immer/-/immer-7.0.9.tgz#28e7552c21d39dd76feccd2b800b7bc86ee4a62e"
   integrity sha512-Vs/gxoM4DqNAYR7pugIxi0Xc8XAun/uy7AQu4fLLqaTBHxjOP9pJ266Q9MWA/ly4z6rAFZbvViOtihxUZ7O28A==
 
+immutable@^4.0.0-rc.12:
+  version "4.0.0-rc.12"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
+  integrity sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
+
 import-cwd@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-2.1.0.tgz#aa6cf36e722761285cb371ec6519f53e2435b0a9"
@@ -5428,6 +5553,16 @@ invariant@^2.2.2, invariant@^2.2.4:
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
   dependencies:
     loose-envify "^1.0.0"
+
+io-ts-types@^0.5.11:
+  version "0.5.11"
+  resolved "https://registry.yarnpkg.com/io-ts-types/-/io-ts-types-0.5.11.tgz#475e8680bfacee05f450c64f3b0b89f4a790dd58"
+  integrity sha512-BqWYAvcSOxnKWIAYAcqF6nS+zhWRb6W+oezF2FzFt8+5a6b8PHNXmbOiV3MwRDY1G6FIctMo71QtIrExLT7LCQ==
+
+io-ts@^2.2.10:
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/io-ts/-/io-ts-2.2.10.tgz#447d02df51717464a90712b146ec8dbc21b4a74b"
+  integrity sha512-WHx5jJe7hPpc6JoSIVbD+Xn6tYqe3cRvNpX24d8Wi15/kxhRWa8apo0Gzag6Xg99sCNY9OHKylw/Vhv0JAbNPQ==
 
 ip-regex@^2.1.0:
   version "2.1.0"
@@ -6898,6 +7033,11 @@ mkdirp@^0.5.5:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
+
+monocle-ts@^2.0.1:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/monocle-ts/-/monocle-ts-2.3.3.tgz#1e6d83dcf42bcb96b74fdda07813c2a47ec6cfa4"
+  integrity sha512-pcQyauWO2vapxyZgbhTd73Dv8TmTELx1rL81bvrtPO2sUYTi1MIHmw3j/iMyeNaJwTmnGNAjqJpYV8Gq1Eu68g==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -8834,6 +8974,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redux-immutable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
+  integrity sha1-Ohoy32Y2ZGK2NpHw4dw15HK7yfM=
+
 redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
@@ -10223,10 +10368,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@~3.8.2:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
-  integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
+typescript@^3.8.2:
+  version "3.9.7"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
+  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
