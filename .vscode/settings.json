@@ -1,0 +1,44 @@
+{
+  "npm.enableScriptExplorer": true,
+  "editor.cursorStyle": "block",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnType": true,
+  "editor.autoIndent": "full",
+  "workbench.editor.showIcons": true,
+  "search.exclude": {
+    "**/node_modules": false,
+    "**/bower_components": true,
+    "**/build": true,
+    ".tmp": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/.temp/**": true,
+    "**/.tmp/**": true,
+    "**/build/**": true,
+    "**/.tmp": true,
+    ".tmp": true,
+    "**/target": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/.git/objects": true,
+    "**/node_modules": false,
+    "**/.temp/**": true,
+    "**/.tmp/**": true,
+    "**/build/**": false,
+    "**/.tmp": true,
+    ".tmp": true
+  },
+  "extensions.autoUpdate": true,
+  "tslint.packageManager": "npm",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.tabCompletion": "onlySnippets"
+}
