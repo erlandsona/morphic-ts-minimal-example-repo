@@ -1,105 +1,48 @@
-import * as t from 'io-ts'
-// import { flow } from 'fp-ts/function'
-import { summonFor } from '@morphic-ts/batteries/lib/summoner-ESBST'
-// import { ADTType } from '@morphic-ts/adt'
-const { summon, tagged } = summonFor<{}>({})
-
-export const State = summon(F => F.interface({
-    data: F.number()
-}, 'State'))
-
-export type StateT = t.TypeOf<typeof State.type>
+import { Action } from "src/framework/actions";
+import { AsOpaque, summon, tagged } from "src/framework/summoner";
+import { AOfMorhpADT, AType, EType } from "@morphic-ts/summoners";
 
 /**
- * SmartCtor for an Action
+ * You can use Opacified type (boilerplate can be derived from the snippet - copied in this repo)
+ * Cleaner overall for usage (the boilerplate on definition site is the tradeoff - a good one IMHO)
  */
-// export const Data = <Tag extends string, E, P>(
-//   k: Tag,
-//   payload: MyProgram<E, P & { type?: never }>
-// ): M<E & TagTypeIs<string>, P & TagTypeIs<Tag>> =>
-//   summon<E & TagTypeIs<string>, P & TagTypeIs<Tag>>(F =>
-//     F.intersection(
-//       [
-//         F.interface(
-//           {
-//             type: F.stringLiteral(k)
-//           },
-//           `Tag ‘${k as string}'`
-//         ),
-//         payload(F)
-//       ],
-//       k
-//     )
-//   )
+const Increment_ = Action("Increment", (F) => F.interface({}, "Increment"));
+export interface Increment extends AType<typeof Increment_> {}
+export interface IncrementRaw extends EType<typeof Increment_> {}
+export const Increment = AsOpaque<IncrementRaw, Increment>()(Increment_);
 
-// export const Data = (
-//   k: string,
-//   payload: (_: AlgebraNoUnion<G, Env>) => HKT2<G, Env, unknown, unknown> = (_) => null
-// ): {[k: string]:? AlgebraNoUnion<G, Env> } => ({
-//   [k]: summon(F => {
-//     console.log(typeof F)
-//     return payload
-//       ? // Non-Nullary Constructor Case
-//         F.intersection(
-//           [
-//             F.interface(
-//               {
-//                 type: F.stringLiteral(k),
-//               },
-//               `Tag '${k}'`
-//             ),
-//             payload(F),
-//           ],
-//           k
-//         )
-//       : // Nullary Constructor Case
-//         F.interface({ type: F.stringLiteral(k) }, `Tag '${k}'`)
-//     }
-//   ),
-// })
+const Decrement_ = Action("Decrement", (F) => F.interface({}, "Decrement"));
+export interface Decrement extends AType<typeof Decrement_> {}
+export interface DecrementRaw extends EType<typeof Decrement_> {}
+export const Decrement = AsOpaque<DecrementRaw, Decrement>()(Decrement_);
 
+export const Actions = tagged("type")({
+  Increment,
+  Decrement,
+});
+export type Actions = AOfMorhpADT<typeof Actions>;
 
-// NOTE: For use constructing ADT's with nullary data constructors...
-const Variant = tagged('type')
+const plus = (x: number) => (y: number) => x + y;
 
-const Increment = summon(F =>
-    F.interface({ type: F.stringLiteral('Increment') }, 'Increment')
-)
+const State_ = summon((F) => F.interface({ data: F.number() }, "State"));
+export interface State extends AType<typeof State_> {}
+export interface StateRaw extends EType<typeof State_> {}
+export const State = AsOpaque<StateRaw, State>()(State_);
 
-const Decrement = summon(F =>
-    F.interface({ type: F.stringLiteral('Decrement') }, 'Decrement')
-)
+export const init = State.build({ data: 0 });
 
-export const Action = Variant({
-    Increment,
-    Decrement
-    // Example usage of Data constructor with action payload.
-    // ...Data('NameOfConstructor', F => F.interface({name: F.string()})),
-    // Example usage of nullary Data constructor.
-    // ...Data('ButtonClicked')
-    // Example usage of proper nesting of child Actions
-    // ...Data('PesDash', F => F.interface({ _: PesDash.Action })),
-})
+/**
+ * This one creates a reducer :)
+ */
+const reducer = Actions.createReducer(init)({
+  Increment: (_a) => {
+    console.log("Increment");
+    return State.lensFromProp("data").modify(plus(1));
+  },
+  Decrement: (_a) => {
+    console.log("Decrement");
+    return State.lensFromProp("data").modify(plus(-1));
+  },
+});
 
-export type ActionT = t.TypeOf<typeof Action.type>
-
-const plus = (x: number) => (y: number) => x + y
-// const always = <A>(x: A) => <Y>(_y: Y) => x
-
-
-export const init = State.build({data: 0})
-const reducer: (_: ActionT) => (_: StateT) => StateT =
-    Action.matchStrict({
-        Increment: (_a) => {
-            console.log("Increment")
-            return State.lensFromProp('data').modify(plus(1))
-        },
-        Decrement: (_a) => {
-            console.log("Decrement")
-            return State.lensFromProp('data').modify(plus(-1))
-        },
-    })
-
-
-
-export default reducer
+export default reducer;
