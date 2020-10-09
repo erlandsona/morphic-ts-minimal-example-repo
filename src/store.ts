@@ -4,18 +4,15 @@ import { createStore, combineReducers } from 'redux';
 import counter, {
   init as counterI,
   State as CounterS,
-  // StateT as CounterT
   Action as CounterA,
   // ActionT as CounterV
 } from './features/counter/data';
 import * as t from 'io-ts'
-// import { flow } from 'fp-ts/function'
-import { summonFor } from '@morphic-ts/batteries/lib/summoner-ESBST'
+import { flow } from 'fp-ts/function'
+import { AsOpaque, AOfMorhpADT, AType, EType, Variant, Ctor, summon } from 'src/utils/data'
 // import { Reducer } from 'react'
 // import { flow } from 'fp-ts/function'
 // import { Map } from 'immutable'
-
-const { summon, tagged } = summonFor<{}>({})
 
 export const State = summon(F =>
   F.interface({
@@ -24,21 +21,22 @@ export const State = summon(F =>
 )
 export type StateT = t.TypeOf<typeof State.type>
 
-const Counter = summon(F =>
-  F.interface({ type: F.stringLiteral('Counter'), _: CounterA(F) }, 'Counter')
-)
+const Counter_ = Ctor('Counter', F => F.interface({_: CounterA(F)}, 'Counter'))
+export interface Counter extends AType<typeof Counter_> {}
+export interface CounterRaw extends EType<typeof Counter_> {}
+export const Counter = AsOpaque<CounterRaw, Counter>()(Counter_)
 
-export const Action = tagged('type')({
+export const Action = Variant({
   Counter
 })
-export type ActionT = t.TypeOf<typeof Action.type>
+export type ActionT = AOfMorhpADT<typeof Action>
 
 // type Store = Reducer<StateT, ActionT>
 
 export default createStore(
   combineReducers({
     tsReducer: Action.createReducer(counterI)({
-      Counter: ({ _ }) => counter(_),
+      Counter: flow(Action.lensFromProp('_').get, counter),
     }),
     ...combineImmutable({}),
   })
